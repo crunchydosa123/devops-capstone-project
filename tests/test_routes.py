@@ -154,7 +154,7 @@ class TestAccountService(TestCase):
         resp = self.client.post(BASE_URL, json=test_account.serialize())
         self.assertEqual(
             resp.status_code,
-            status.HTTP_HTTP_201_CREATED
+            status.HTTP_201_CREATED
         )
 
         # update the account
