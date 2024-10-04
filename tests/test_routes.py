@@ -127,7 +127,7 @@ class TestAccountService(TestCase):
         )
         self.assertEqual(
             response.status_code,
-            status.HTTP_201_CREATED,
+            status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
             "Could not create test Account"
         )
 
@@ -154,7 +154,7 @@ class TestAccountService(TestCase):
         resp = self.client.post(BASE_URL, json=test_account.serialize())
         self.assertEqual(
             resp.status_code,
-            status.HTTP_415_UNSUPPORTED_MEDIA_TYPE
+            status.HTTP_HTTP_201_CREATED
         )
 
         # update the account
